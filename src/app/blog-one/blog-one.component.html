@@ -1,186 +1,43 @@
 <app-header></app-header>
 <div class="page-title-area">
-    <div class="container">
-        <div class="page-title-content">
-            <h2>Blog</h2>
+  <div class="container">
+    <div class="page-title-content">
+      <h2>Blog</h2>
 
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>Blog</li>
-            </ul>
-        </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>Blog</li>
+      </ul>
     </div>
+  </div>
 </div>
 <!-- End Page Title Area -->
 
 <!-- Start Blog Area -->
 <section class="blog-area ptb-120">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img6.jpg" alt="image"></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6" *ngFor="let post of posts">
+        <div class="single-blog-post">
+          <div class="post-image">
+            <a href="#"><img [src]="post.imageUrl" alt="image" /></a>
 
-                        <div class="date">21 Jan, 2021</div>
-                    </div>
+            <div class="date">{{ post.createdAt | date }}</div>
+          </div>
 
-                    <div class="post-content">
-                        <span>By: <a href="#">Anderson</a></span>
-                        <h3><a href="#">Remember, Only YOU can Prevent Genetic Drift</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img7.jpg" alt="image"></a>
-
-                        <div class="date">12 Sep, 2021</div>
-                    </div>
-
-                    <div class="post-content">
-                        <span>By: <a href="#">John Smith</a></span>
-                        <h3><a href="#">Open letter to the residents of Ellsworth, Maine</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img8.jpg" alt="image"></a>
-
-                        <div class="date">14 Sep, 2021</div>
-                    </div>
-
-                    <div class="post-content">
-                        <span>By: <a href="#">Joe Root</a></span>
-                        <h3><a href="#">What is a normal phenotype for aging mice?</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img9.jpg" alt="image"></a>
-
-                        <div class="date">16 Sep, 2021</div>
-                    </div>
-
-                    <div class="post-content">
-                        <span>By: <a href="#">Sarah Taylor</a></span>
-                        <h3><a href="#">This burning question keeps postdocs up at night</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img1.jpg" alt="image"></a>
-
-                        <div class="date">12 Sep, 2021</div>
-                    </div>
-
-                    <div class="post-content">
-                        <span>By: <a href="#">John Smith</a></span>
-                        <h3><a href="#">Quick Facts to Improve Antibody Half-Life Measurements</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img2.jpg" alt="image"></a>
-
-                        <div class="date">14 Sep, 2021</div>
-                    </div>
-
-                    <div class="post-content">
-                        <span>By: <a href="#">Joe Root</a></span>
-                        <h3><a href="#">The Versatile Mouse Model for Rare Disease Research</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img3.jpg" alt="image"></a>
-
-                        <div class="date">16 Sep, 2021</div>
-                    </div>
-
-                    <div class="post-content">
-                        <span>By: <a href="#">Sarah</a></span>
-                        <h3><a href="#">If you’re happy and you know it, thank your bugs</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img4.jpg" alt="image"></a>
-
-                        <div class="date">28 Sep, 2021</div>
-                    </div>
-
-                    <div class="post-content">
-                        <span>By: <a href="#">James Bond</a></span>
-                        <h3><a href="#">Moving forward at the National Cancer Institute</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="post-image">
-                        <a href="#"><img src="assets/img/blog-img5.jpg" alt="image"></a>
-
-                        <div class="date">20 Dec, 2021</div>
-                    </div>
-
-                    <div class="post-content">
-                        <span>By: <a href="#">Steven Lucy</a></span>
-                        <h3><a href="#">Including Aged Mice in Immuno-Oncology Research</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="#" class="learn-more-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-12 col-md-12">
-                <div class="pagination-area">
-                    <a href="#" class="prev page-numbers"><i class="fas fa-angle-double-left"></i></a>
-                    <a href="#" class="page-numbers">1</a>
-                    <span class="page-numbers current" aria-current="page">2</span>
-                    <a href="#" class="page-numbers">3</a>
-                    <a href="#" class="page-numbers">4</a>
-                    <a href="#" class="next page-numbers"><i class="fas fa-angle-double-right"></i></a>
-                </div>
-            </div>
+          <div class="post-content">
+            <span>By: <a href="#"></a></span>
+            <h3>
+              <a href="#">{{ post.namePost }}</a>
+            </h3>
+            <p>{{ post.contentPost }}</p>
+            <a href="#" class="learn-more-btn"
+              >Learn More <i class="flaticon-arrow-pointing-to-right"></i
+            ></a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 <app-footer></app-footer>

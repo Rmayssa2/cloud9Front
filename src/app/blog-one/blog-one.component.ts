@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PostService } from '../services/post.service';
+import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-blog-one',
   templateUrl: './blog-one.component.html',
-  styleUrls: ['./blog-one.component.css']
+  styleUrls: ['./blog-one.component.css'],
 })
-export class BlogOneComponent {
+export class BlogOneComponent implements OnInit {
+  posts: Post[] = [];
 
+  constructor(private postService: PostService) {}
+
+  ngOnInit(): void {
+    this.postService.getPosts().subscribe((posts) => {
+      this.posts = posts;
+    });
+  }
 }

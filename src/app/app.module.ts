@@ -21,6 +21,9 @@ import { SingleResearchComponent } from './single-research/single-research.compo
 import { ResearchComponent } from './research/research.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ComingsoonComponent } from './comingsoon/comingsoon.component';
+import { PostComponent } from './post/post.component';
+import { CommentComponent } from './comment/comment.component';
+import { ReplySectionComponent } from './reply-section/reply-section.component';
 
 @NgModule({
   declarations: [
@@ -42,16 +45,12 @@ import { ComingsoonComponent } from './comingsoon/comingsoon.component';
     ResearchComponent,
     NotfoundComponent,
     ComingsoonComponent,
-    
+    PostComponent,
+    CommentComponent,
+    ReplySectionComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

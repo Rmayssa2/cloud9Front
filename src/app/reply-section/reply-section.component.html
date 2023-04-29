@@ -1,0 +1,34 @@
+<div class="comment-respond">
+  <h3 class="comment-reply-title">Leave a Reply</h3>
+
+  <form class="comment-form">
+    <p class="comment-notes">
+      <span id="email-notes">Your email address will not be published.</span>
+      Required fields are marked
+      <span class="required">*</span>
+    </p>
+    <p class="comment-form-comment">
+      <label>Comment</label>
+      <textarea
+        [ngModel]="commentContent"
+        name="comment"
+        (ngModelChange)="onContentChange($event)"
+        id="comment"
+        cols="45"
+        rows="5"
+        maxlength="65525"
+        required="required"
+      ></textarea>
+    </p>
+    <p class="form-submit">
+      <input
+        type="submit"
+        name="submit"
+        id="submit"
+        class="submit"
+        (click)="onSubmit($event)"
+        value="Post Comment"
+      />
+    </p>
+  </form>
+</div>

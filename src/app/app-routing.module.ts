@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'single-team', component: SingleTeamComponent },
   { path: 'blogOne', component: BlogOneComponent },
   { path: 'blogTwo', component: BlogTwoComponent },
-  { path: 'single-blog', component: SingleBlogComponent },
+  { path: 'single-blog/:postId', component: SingleBlogComponent },
   { path: 'single-service', component: SingleServiceComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'checkout', component: CheckoutComponent },
@@ -37,28 +37,13 @@ const routes: Routes = [
   { path: 'research', component: ResearchComponent },
   { path: 'single-research', component: SingleResearchComponent },
   { path: 'comingsoon', component: ComingsoonComponent },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 
 export const routingComponents = [
   HomeComponent,
@@ -72,5 +57,5 @@ export const routingComponents = [
   SingleBlogComponent,
   SingleServiceComponent,
   ShopComponent,
-  CheckoutComponent
+  CheckoutComponent,
 ];
