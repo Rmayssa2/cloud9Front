@@ -32,7 +32,7 @@
                   By: <a href="#">Admin</a>
                 </li>
 
-                <li>{{ post.createdAt }}</li>
+                <li>{{ post.createdAt | date : "short" }}</li>
 
                 <li><a href="#">Tech</a></li>
 
@@ -40,7 +40,9 @@
 
                 <li>521 Views</li>
 
-                <li><a href="#">3 Comments</a></li>
+                <li>
+                  <a href="#">{{ comments.length }} Comments</a>
+                </li>
               </ul>
             </div>
 
@@ -95,7 +97,7 @@
         </div>
 
         <div class="comments-area">
-          <h3 class="comments-title">2 Comments:</h3>
+          <h3 class="comments-title">{{ comments.length }} Comments</h3>
 
           <ol class="comment-list">
             <li class="comment" *ngFor="let comment of comments">
@@ -113,7 +115,7 @@
 
                   <div class="comment-metadata">
                     <a href="#">
-                      <time>{{ comment.createdAt | date }}</time>
+                      <time>{{ comment.createdAt | date : "short" }}</time>
                     </a>
                   </div>
                 </footer>
@@ -124,42 +126,7 @@
                   </p>
                   {{ comment.post.idPost }}
                 </div>
-
-                <div class="reply">
-                  <a href="#" class="comment-reply-link">Reply</a>
-                </div>
               </article>
-
-              <ol class="children">
-                <li class="comment">
-                  <article class="comment-body">
-                    <footer class="comment-meta">
-                      <div class="comment-author vcard">
-                        <img
-                          src="assets/img/author2.jpg"
-                          class="avatar"
-                          alt="image"
-                        />
-                        <b class="fn">Steven Smith</b>
-                        <span class="says">says:</span>
-                      </div>
-                    </footer>
-
-                    <div class="comment-content">
-                      <p>
-                        Lorem Ipsum has been the industry’s standard dummy text
-                        ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled it to make a type specimen
-                        book.
-                      </p>
-                    </div>
-
-                    <div class="reply">
-                      <a href="#" class="comment-reply-link">Reply</a>
-                    </div>
-                  </article>
-                </li>
-              </ol>
             </li>
           </ol>
 
@@ -169,65 +136,8 @@
 
       <div class="col-lg-4 col-md-12">
         <aside class="widget-area" id="secondary">
-          <section class="widget widget_search">
-            <form class="search-form">
-              <label>
-                <span class="screen-reader-text">Search for:</span>
-                <input
-                  type="search"
-                  class="search-field"
-                  placeholder="Search..."
-                />
-              </label>
-              <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-          </section>
-
-          <section class="widget widget_labto_posts_thumb">
-            <h3 class="widget-title">Popular Posts</h3>
-
-            <article class="item">
-              <a href="#" class="thumb">
-                <span class="fullimage cover bg1" role="img"></span>
-              </a>
-              <div class="info">
-                <time datetime="2021-06-30">June 30, 2021</time>
-                <h4 class="title usmall">
-                  <a href="#">How to change yourself for the better</a>
-                </h4>
-              </div>
-
-              <div class="clear"></div>
-            </article>
-
-            <article class="item">
-              <a href="#" class="thumb">
-                <span class="fullimage cover bg2" role="img"></span>
-              </a>
-              <div class="info">
-                <time datetime="2021-06-30">June 30, 2021</time>
-                <h4 class="title usmall">
-                  <a href="#">10 Tactics for marketing your company</a>
-                </h4>
-              </div>
-
-              <div class="clear"></div>
-            </article>
-
-            <article class="item">
-              <a href="#" class="thumb">
-                <span class="fullimage cover bg3" role="img"></span>
-              </a>
-              <div class="info">
-                <time datetime="2021-06-30">June 30, 2021</time>
-                <h4 class="title usmall">
-                  <a href="#">Google web ranking changing much</a>
-                </h4>
-              </div>
-
-              <div class="clear"></div>
-            </article>
-          </section>
+          <app-post-search></app-post-search>
+          <app-popular-posts></app-popular-posts>
 
           <section class="widget widget_recent_comments">
             <h3 class="widget-title">Recent Comments</h3>

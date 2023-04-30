@@ -1,0 +1,20 @@
+<section class="widget widget_search">
+  <form class="search-form" (submit)="search()">
+    <label>
+      <span class="screen-reader-text">Search for:</span>
+      <input
+        type="search"
+        name="search"
+        [(ngModel)]="searchTerm"
+        class="search-field"
+        placeholder="Search..."
+      />
+    </label>
+    <button type="submit"><i class="fas fa-search"></i></button>
+  </form>
+  <ul>
+    <li *ngFor="let post of posts">
+      <a [routerLink]="['/single-blog', post.idPost]">{{ post.namePost }}</a>
+    </li>
+  </ul>
+</section>

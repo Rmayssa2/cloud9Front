@@ -24,6 +24,10 @@ import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { PostComponent } from './post/post.component';
 import { CommentComponent } from './comment/comment.component';
 import { ReplySectionComponent } from './reply-section/reply-section.component';
+import { PostSearchComponent } from './post-search/post-search.component';
+import { PopularPostsComponent } from './popular-posts/popular-posts.component';
+import { PostFormComponent } from './post-form/post-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,8 +52,17 @@ import { ReplySectionComponent } from './reply-section/reply-section.component';
     PostComponent,
     CommentComponent,
     ReplySectionComponent,
+    PostSearchComponent,
+    PopularPostsComponent,
+    PostFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

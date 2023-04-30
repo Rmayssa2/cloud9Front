@@ -9,6 +9,7 @@ import { Post } from '../models/post.model';
 })
 export class BlogOneComponent implements OnInit {
   posts: Post[] = [];
+  showForm: boolean = false;
 
   constructor(private postService: PostService) {}
 
@@ -16,5 +17,8 @@ export class BlogOneComponent implements OnInit {
     this.postService.getPosts().subscribe((posts) => {
       this.posts = posts;
     });
+  }
+  showPostForm(): void {
+    this.showForm = !this.showForm;
   }
 }

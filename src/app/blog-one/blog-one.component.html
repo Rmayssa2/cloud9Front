@@ -12,6 +12,12 @@
   </div>
 </div>
 <!-- End Page Title Area -->
+<section>
+  <div>
+    <button (click)="showPostForm()">Click me</button>
+    <div *ngIf="showForm"><app-post-form></app-post-form></div>
+  </div>
+</section>
 
 <!-- Start Blog Area -->
 <section class="blog-area ptb-120">
@@ -20,18 +26,24 @@
       <div class="col-lg-4 col-md-6" *ngFor="let post of posts">
         <div class="single-blog-post">
           <div class="post-image">
-            <a href="#"><img [src]="post.imageUrl" alt="image" /></a>
+            <a [routerLink]="['/single-blog', post.idPost]"
+              ><img [src]="post.imageUrl" alt="image"
+            /></a>
 
             <div class="date">{{ post.createdAt | date }}</div>
           </div>
 
           <div class="post-content">
-            <span>By: <a href="#"></a></span>
+            <span
+              >By: <a [routerLink]="['/single-blog', post.idPost]"></a
+            ></span>
             <h3>
               <a href="#">{{ post.namePost }}</a>
             </h3>
             <p>{{ post.contentPost }}</p>
-            <a href="#" class="learn-more-btn"
+            <a
+              [routerLink]="['/single-blog', post.idPost]"
+              class="learn-more-btn"
               >Learn More <i class="flaticon-arrow-pointing-to-right"></i
             ></a>
           </div>

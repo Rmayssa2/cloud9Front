@@ -1,0 +1,13 @@
+<h1>{{ message }}</h1>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <label for="postName">Post Name</label>
+  <input type="text" id="postName" formControlName="postName" />
+
+  <label for="postContent">Post Content</label>
+  <textarea id="postContent" formControlName="postContent"></textarea>
+
+  <label for="imageUrl">Image URL</label>
+  <input type="text" id="imageUrl" formControlName="imageUrl" />
+
+  <button type="submit">Submit</button>
+</form>

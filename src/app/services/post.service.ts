@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Post } from '../models/post.model';
+import { CreatePost, Post } from '../models/post.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,8 +18,8 @@ export class PostService {
     return this.http.get<Post>(`${this.apiUrl}read?id=${idPost}`);
   }
 
-  createPost(post: Post): Observable<Post> {
-    return this.http.post<Post>(this.apiUrl, post);
+  createPost(post: CreatePost): Observable<Post> {
+    return this.http.post<Post>(this.apiUrl + 'create?userid=1', post);
   }
 
   updatePost(post: Post): Observable<Post> {
@@ -30,5 +30,13 @@ export class PostService {
   deletePost(id: number): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url);
+  }
+
+  getBestPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.apiUrl}sorted-by-reactions`);
+  }
+  searchPosts(searchTerm: string): Observable<Post[]> {
+    const url = `${this.apiUrl}search?searchTerm=${searchTerm}`;
+    return this.http.get<Post[]>(url);
   }
 }

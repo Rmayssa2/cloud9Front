@@ -5,3 +5,8 @@ export interface Post {
   imageUrl: string;
   createdAt: string;
 }
+export interface CreatePost {
+  namePost: string;
+  contentPost: string;
+  imageUrl: string;
+}
