@@ -2,7 +2,14 @@
 <div class="page-title-area">
   <div class="container">
     <div class="page-title-content">
-      <h2>Blog</h2>
+      <h5>
+        <button (click)="showPostForm()" class="btn btn-primary">
+          Create a post
+        </button>
+        <div *ngIf="showForm" class="mt-4">
+          <app-post-form></app-post-form>
+        </div>
+      </h5>
 
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -12,15 +19,11 @@
   </div>
 </div>
 <!-- End Page Title Area -->
-<section>
-  <div>
-    <button (click)="showPostForm()">Click me</button>
-    <div *ngIf="showForm"><app-post-form></app-post-form></div>
-  </div>
-</section>
 
 <!-- Start Blog Area -->
 <section class="blog-area ptb-120">
+  <div class="container"></div>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-6" *ngFor="let post of posts">

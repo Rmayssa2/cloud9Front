@@ -109,7 +109,7 @@
                       class="avatar"
                       alt="image"
                     />
-                    <b class="fn">John Jones</b>
+                    <b class="fn">User Name</b>
                     <span class="says">says:</span>
                   </div>
 
@@ -121,10 +121,31 @@
                 </footer>
 
                 <div class="comment-content">
-                  <p>
-                    {{ comment.content }}
-                  </p>
+                  <div
+                    *ngIf="updateComment == comment.idComment; else contentShow"
+                  >
+                    <app-comment-blog
+                      [comment]="comment"
+                      (commentUpdated)="onCommentUpdated($event)"
+                    ></app-comment-blog>
+                  </div>
+                  <ng-template #contentShow
+                    ><p>
+                      {{ comment.content }}
+                    </p></ng-template
+                  >
+
                   {{ comment.post.idPost }}
+                  <button
+                    class="btn-delete"
+                    (click)="removeComment(comment.idComment)"
+                  >
+                    Delete
+                  </button>
+
+                  <button class="btn-edit" (click)="editComment(comment)">
+                    Edit
+                  </button>
                 </div>
               </article>
             </li>

@@ -1,13 +1,35 @@
-<h1>{{ message }}</h1>
-<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
-  <label for="postName">Post Name</label>
-  <input type="text" id="postName" formControlName="postName" />
+<div class="container">
+  <h1 class="my-4 display-4 text-center">{{ message }}</h1>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="my-4">
+    <div class="mb-3">
+      <label for="postName" class="form-label">Post Name</label>
+      <input
+        type="text"
+        id="postName"
+        formControlName="postName"
+        class="form-control"
+      />
+    </div>
 
-  <label for="postContent">Post Content</label>
-  <textarea id="postContent" formControlName="postContent"></textarea>
+    <div class="mb-3">
+      <label for="postContent" class="form-label">Post Content</label>
+      <textarea
+        id="postContent"
+        formControlName="postContent"
+        class="form-control"
+      ></textarea>
+    </div>
 
-  <label for="imageUrl">Image URL</label>
-  <input type="text" id="imageUrl" formControlName="imageUrl" />
+    <div class="mb-3">
+      <label for="imageUrl" class="form-label">Image URL</label>
+      <input
+        type="text"
+        id="imageUrl"
+        formControlName="imageUrl"
+        class="form-control"
+      />
+    </div>
 
-  <button type="submit">Submit</button>
-</form>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -11,11 +11,13 @@ import { PostService } from '../services/post.service';
   styleUrls: ['./single-blog.component.css'],
 })
 export class SingleBlogComponent implements OnInit {
-  comments: Comment[] = [];
+  comments: any[] = [];
+  comment!: Comment;
   post!: Post;
   posts: Post[] = [];
   postId!: number;
-
+  updateComment: number = 0;
+  updatedcomment!: Comment;
   constructor(
     private commentService: CommentService,
     private postService: PostService,
@@ -29,11 +31,26 @@ export class SingleBlogComponent implements OnInit {
       this.postService.getPost(this.postId).subscribe((post) => {
         this.post = post;
       });
+
       this.commentService
         .getCommentsByPost(this.postId)
         .subscribe((comments) => {
           this.comments = comments;
         });
     });
+  }
+  removeComment(id: number): void {
+    this.commentService.removeComment(id).subscribe(() => {
+      this.comments = this.comments.filter((c) => c.idComment !== id);
+    });
+  }
+  onCommentUpdated(comment: Comment): void {
+    this.updateComment = 0;
+    this.commentService.getAllComments().subscribe((comments) => {
+      this.comments = comments;
+    });
+  }
+  editComment(comment: Comment): void {
+    this.updateComment = comment.idComment;
   }
 }

@@ -28,6 +28,7 @@ import { PostSearchComponent } from './post-search/post-search.component';
 import { PopularPostsComponent } from './popular-posts/popular-posts.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommentBlogComponent } from './comment-blog/comment-blog.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PostSearchComponent,
     PopularPostsComponent,
     PostFormComponent,
+    CommentBlogComponent,
   ],
   imports: [
     BrowserModule,

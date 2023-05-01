@@ -6,15 +6,21 @@
         type="search"
         name="search"
         [(ngModel)]="searchTerm"
-        class="search-field"
+        class="search-field form-control"
         placeholder="Search..."
       />
     </label>
-    <button type="submit"><i class="fas fa-search"></i></button>
+    <button type="submit" class="btn btn-primary">
+      <i class="fas fa-search"></i>
+    </button>
   </form>
-  <ul>
+  <ul class="list-unstyled mt-4">
     <li *ngFor="let post of posts">
-      <a [routerLink]="['/single-blog', post.idPost]">{{ post.namePost }}</a>
+      <a
+        [routerLink]="['/single-blog', post.idPost]"
+        class="text-decoration-none"
+        >{{ post.namePost }}</a
+      >
     </li>
   </ul>
 </section>

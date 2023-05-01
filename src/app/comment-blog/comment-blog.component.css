@@ -1,0 +1,8 @@
+.btn-save {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid #ccc;
+  color: #dc3545;
+  background-color: #f8f9fa;
+}

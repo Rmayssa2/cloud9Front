@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="content">Content:</label>
+    <textarea
+      id="content"
+      class="form-control"
+      name="content"
+      [(ngModel)]="editedComment.content"
+    ></textarea>
+  </div>
+  <button type="submit" class="btn-save">Save Changes</button>
+</form>
