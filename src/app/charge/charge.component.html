@@ -1,0 +1,51 @@
+<!-- payment-dialog.component.html -->
+<div class="modal-header">
+    <h4 class="modal-title">Payment Form</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter full name">
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email">
+      </div>
+  
+      <div class="form-group">
+        <label for="card">Visa Card Number</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="card" placeholder="Enter card number" aria-describedby="card-icon">
+          <span class="input-group-text" id="card-icon"><i class="fab fa-cc-visa"></i></span>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="exp-month">Expiration Date (MM/YY)</label>
+            <input type="text" class="form-control" id="exp-month" placeholder="MM">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="exp-year">&nbsp;</label>
+            <input type="text" class="form-control" id="exp-year" placeholder="YY">
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="cvc">CVV</label>
+        <input type="text" class="form-control" id="cvc" placeholder="Enter CVV">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="onSubmit()" >Submit Payment</button>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onCancel()">Cancel</button>
+  </div>
+  
