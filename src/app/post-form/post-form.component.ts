@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { PostService } from '../services/post.service';
 import { CreatePost, Post } from '../models/post.model';
 import { Validators } from '@angular/forms';
+import { TokenStorageService } from '../service/token-storage.service';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-post-form',
@@ -12,13 +14,16 @@ import { Validators } from '@angular/forms';
 export class PostFormComponent implements OnInit {
   postForm!: FormGroup;
   message: string = '';
-
+  user!: any;
   constructor(
     private formBuilder: FormBuilder,
-    private postService: PostService
+    private postService: PostService,
+    private storageService: TokenStorageService
   ) {}
 
   ngOnInit() {
+    this.user = this.storageService.getUser();
+    console.log(this.user);
     this.postForm = this.formBuilder.group({
       postName: ['', Validators.required],
       postContent: ['', Validators.required],
@@ -27,13 +32,14 @@ export class PostFormComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.user);
     if (this.postForm.valid) {
       const post: CreatePost = {
         namePost: this.postForm.value.postName,
         contentPost: this.postForm.value.postContent,
         imageUrl: this.postForm.value.imageUrl,
       };
-      this.postService.createPost(post).subscribe((posts) => {
+      this.postService.createPost(post, this.user.id!).subscribe((posts) => {
         this.message = 'Post créé avec succés';
         window.location.reload();
       });

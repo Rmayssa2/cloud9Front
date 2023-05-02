@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tobeeb-aa37d": {
+      "hosting": {
+        "zylon": [
+          "tobeeb-aa37d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tobeeb-aa37d"
+  }
+}

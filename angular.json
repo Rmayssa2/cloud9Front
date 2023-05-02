@@ -22,7 +22,9 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.png",
-              "src/assets"
+              "src/assets",
+              "src/back-assets",
+              "src/back-assets/vendor/fons/boxicons"
             ],
             "styles": [
               "src/assets/css/bootstrap.min.css",
@@ -36,7 +38,13 @@
               "src/assets/css/owl.carousel.min.css",
               "src/assets/css/progressbar.min.css",
               "src/assets/css/style.css",
-              "src/assets/css/responsive.css"
+              "src/assets/css/responsive.css",
+              "src/back-assets/vendor/fonts/boxicons.css",
+              "src/back-assets/vendor/css/core.css",
+              "src/back-assets/vendor/css/theme-default.css",
+              "src/back-assets/css/demo.css",
+              "src/back-assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
+              "src/back-assets/vendor/libs/apex-charts/apex-charts.css"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
@@ -54,7 +62,17 @@
               "src/assets/js/jquery.ajaxchimp.min.js",
               "src/assets/js/form-validator.min.js",
               "src/assets/js/contact-form-script.js",
-              "src/assets/js/main.js"
+              "src/assets/js/main.js",
+              "src/back-assets/vendor/js/helpers.js",
+              "src/back-assets/js/config.js",
+              "src/back-assets/vendor/libs/jquery/jquery.js",
+              "src/back-assets/vendor/libs/popper/popper.js",
+              "src/back-assets/vendor/js/bootstrap.js",
+              "src/back-assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js",
+              "src/back-assets/vendor/js/menu.js",
+              "src/back-assets/vendor/libs/apex-charts/apexcharts.js",
+              "src/back-assets/js/main.js",
+              "src/back-assets/js/dashboards-analytics.js"
             ]
           },
           "configurations": {
@@ -118,6 +136,16 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "zylon:build:production",
+            "firebaseProject": "tobeeb-aa37d",
+            "firebaseHostingSite": "tobeeb-aa37d"
           }
         }
       }

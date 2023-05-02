@@ -18,6 +18,15 @@ import { ResearchComponent } from './research/research.component';
 import { SingleResearchComponent } from './single-research/single-research.component';
 import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { PostSearchComponent } from './post-search/post-search.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
+import { ActivatedComponent } from './activated/activated.component';
+import { EditProfilComponent } from './edit-profil/edit-profil.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AdminSetsComponent } from './admin-sets/admin-sets.component';
+import { AdminSecurityComponent } from './admin-security/admin-security.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -40,6 +49,17 @@ const routes: Routes = [
   { path: 'single-research', component: SingleResearchComponent },
   { path: 'comingsoon', component: ComingsoonComponent },
   { path: 'search', component: PostSearchComponent },
+  { path: 'forgetPassword', component: ForgetPasswordComponent },
+  { path: 'ResetPwd/:email', component: ResetPwdComponent },
+  { path: 'activate', component: ActivatedComponent },
+  { path: 'edit', component: EditProfilComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'admin/users', component: AdminUsersComponent },
+
+  { path: 'admin/profile', component: AdminProfileComponent },
+  { path: 'admin/settings', component: AdminSetsComponent },
+  { path: 'admin/security', component: AdminSecurityComponent },
+
 ];
 
 @NgModule({
@@ -61,4 +81,11 @@ export const routingComponents = [
   SingleServiceComponent,
   ShopComponent,
   CheckoutComponent,
+  ComingsoonComponent,
+  ForgetPasswordComponent,
+  AdminComponent,
+  AdminUsersComponent
+
+
+
 ];

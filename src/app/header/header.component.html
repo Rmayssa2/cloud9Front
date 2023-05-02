@@ -165,7 +165,18 @@
               <span>04</span>
             </a>
 
-            <a routerLink="/login" class="btn btn-secondary">LOGIN !</a>
+            <a routerLink="/login" class="btn btn-secondary" *ngIf="!isLoggedIn"
+              >LOGIN !</a
+            >
+            <div class="dropdown" *ngIf="isLoggedIn">
+              <img src="{{ imageName }}" class="userImg" /><i
+                class="fas fa-chevron-down"
+              ></i>
+              <div class="dropdown-content">
+                <a routerLink="/edit">Settings</a>
+                <a (click)="logout()" routerLink="/login">Logout</a>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
