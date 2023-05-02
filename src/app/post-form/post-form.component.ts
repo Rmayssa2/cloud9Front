@@ -35,6 +35,7 @@ export class PostFormComponent implements OnInit {
       };
       this.postService.createPost(post).subscribe((posts) => {
         this.message = 'Post créé avec succés';
+        window.location.reload();
       });
     }
 

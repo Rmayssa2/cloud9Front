@@ -21,6 +21,7 @@ import { PostSearchComponent } from './post-search/post-search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+
   { path: 'home', component: HomeComponent },
   { path: 'cart', component: CartComponent },
   { path: 'aboutUs', component: AboutUsComponent },
