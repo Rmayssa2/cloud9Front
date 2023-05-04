@@ -36,7 +36,8 @@
               "src/assets/css/owl.carousel.min.css",
               "src/assets/css/progressbar.min.css",
               "src/assets/css/style.css",
-              "src/assets/css/responsive.css"
+              "src/assets/css/responsive.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",

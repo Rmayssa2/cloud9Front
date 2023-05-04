@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="container-fluid">
-  <div class="row" style="padding-top: 8%">
+  <div class="row" style="padding-top: 12%">
     <div class="col-md-2">
 
 
@@ -16,6 +16,8 @@
           <div> {{ chat.username }} </div>
         </button>
       </div>
+
+      
 
 
 
@@ -128,7 +130,7 @@
                 />
 
 
-                <div style="width: 400px" class="custom-file">
+                <div style="width: 200px" class="custom-file">
            <!-- <input
                     type="file"
                     class="custom-file-input"
@@ -137,7 +139,7 @@
                     #fileInput
                   /> --> 
 
-                  <label for="importFile" class="file-icon">
+                  <label style=" margin-left: 70px;" for="importFile" class="file-icon">
                     <i class="fa fa-file"></i>
                   </label>
                   <input type="file"  class="custom-file-input" id="importFile" (change)="selectFile($event)" #fileInput style="display:none;">
@@ -153,8 +155,8 @@
                 </button> --> 
                 
                 
-                <a class="btn btn-primary glow send d-lg-flex" style="width: 100xp;" (click)="sendMessage()">
-                  <i class="fa fa-paper-plane"></i>
+                <a  style="width: 100xp;" (click)="sendMessage()">
+                  <i class="fa fa-paper-plane" style="font-size: 20px; margin-right: 30px;"></i>
                 </a>
               
 

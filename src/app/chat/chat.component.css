@@ -76,12 +76,14 @@ div.card-content {
 .card-content {
   height: 100%;
   overflow-y: auto;
+  
 }
 
 .chat-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
+  border-radius: 25px;
 }
 
 .chat-container {
@@ -89,11 +91,14 @@ div.card-content {
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
+  border-radius: 55px;
+  
 }
 
 .chat-content {
   display: flex;
   flex-direction: column-reverse;
+  border-radius: 55px;
 }
 
 .card-footer {
@@ -106,20 +111,20 @@ div.card-content {
   flex-direction: column;
   height: 100%;
   padding: 10px;
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /*hetha dakhleni*/
   
 }
 
 .chat-message {
   flex: 1;
-  padding: 5px;
-  margin: 5px;
+  padding: 7px;
+  margin: 7px;
   border-radius: 10px;
-  max-width: 60%;
+  max-width: 70%;
 }
 
 .chat-message.right {
-  background-color: #f36e21;
+  background-color: rgb(255, 81, 0);;
   color: white;
   align-self: flex-end;
 }

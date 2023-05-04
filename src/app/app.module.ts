@@ -25,6 +25,10 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
 import { ActivatedComponent } from './activated/activated.component';
 import { ChatComponent } from './chat/chat.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -51,15 +55,20 @@ import { ChatComponent } from './chat/chat.component';
     ActivatedComponent,
     ChatComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

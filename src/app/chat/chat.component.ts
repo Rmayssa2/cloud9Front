@@ -20,6 +20,8 @@ import { MessageService } from '../service/message.service';
 import { TokenStorageService } from '../service/token-storage.service';
 
 import { HttpClient, HttpEventType, HttpResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -75,7 +77,8 @@ export class ChatComponent {
     private conversationService: ConversationService,
     private messageService: MessageService,
     private tokenStorageService: TokenStorageService,
-    private http: HttpClient
+    private http: HttpClient,
+    private toastr: ToastrService,
   ) {
     this.formImport = new FormGroup({
       importFile: new FormControl('', Validators.required),
@@ -86,6 +89,10 @@ export class ChatComponent {
 
   ngAfterViewInit() {
     this.scrollToBottom();
+  }
+
+  shawTo(){
+    this.toastr.success('Votre Message est envoyer ');
   }
   selectFile(event: any): void {
     this.fileToUpload = event.target.files[0];
@@ -194,6 +201,7 @@ export class ChatComponent {
         }
       );
     window.location.reload();
+    
   }
   sendMessage() {
     if (this.newMessage !== null && this.newMessage !== '') {
@@ -308,6 +316,7 @@ export class ChatComponent {
     }
     this.fileToUpload = undefined;
     this.newMessage = '';
+    this.toastr.success("Votre Message est envoyé");
   }
 
   openfile(filepath: string) {
@@ -318,10 +327,18 @@ export class ChatComponent {
       }
     );
   }
+
+
+
   onEnter(value: string) {
     this.newMessage = value;
     this.sendMessage();
+    this.toastr.success("Votre Message est envoyé");
   }
+
+
+
+
   showChat(data: any) {
     if (this.showChatInProgress || this.createInProgress) {
       return;
