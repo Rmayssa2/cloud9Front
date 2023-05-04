@@ -20,6 +20,7 @@ import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
 import { ActivatedComponent } from './activated/activated.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -43,30 +44,14 @@ const routes: Routes = [
   { path: 'forgetPassword', component: ForgetPasswordComponent },
   { path: 'ResetPwd/:email', component: ResetPwdComponent },
   { path: 'activate', component: ActivatedComponent },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  { path: 'chat', component: ChatComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 
 export const routingComponents = [
   HomeComponent,
@@ -82,6 +67,6 @@ export const routingComponents = [
   ShopComponent,
   CheckoutComponent,
   ComingsoonComponent,
-  ForgetPasswordComponent
-
+  ForgetPasswordComponent,
+  ChatComponent,
 ];

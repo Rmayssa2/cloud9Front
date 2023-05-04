@@ -24,6 +24,7 @@ import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
 import { ActivatedComponent } from './activated/activated.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ActivatedComponent } from './activated/activated.component';
     ForgetPasswordComponent,
     ResetPwdComponent,
     ActivatedComponent,
+    ChatComponent,
     
   ],
   imports: [
