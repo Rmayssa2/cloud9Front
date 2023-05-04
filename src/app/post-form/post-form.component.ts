@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { PostService } from '../services/post.service';
 import { CreatePost, Post } from '../models/post.model';
 import { Validators } from '@angular/forms';
 import { TokenStorageService } from '../service/token-storage.service';
 import { User } from '../models/user.model';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-post-form',
@@ -32,7 +33,6 @@ export class PostFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.user);
     if (this.postForm.valid) {
       const post: CreatePost = {
         namePost: this.postForm.value.postName,

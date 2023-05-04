@@ -29,7 +29,8 @@
               <ul>
                 <li>
                   <i class="far fa-user-circle"></i>
-                  By: <a href="#">Admin</a>
+                  By: {{ post.user.username }}<a href="#"></a>
+                  <p></p>
                 </li>
 
                 <li>{{ post.createdAt | date : "short" }}</li>
@@ -109,7 +110,7 @@
                       class="avatar"
                       alt="image"
                     />
-                    <b class="fn">User Name</b>
+                    <b class="fn">{{ comment.user.username }}</b>
                     <span class="says">says:</span>
                   </div>
 
@@ -135,7 +136,6 @@
                     </p></ng-template
                   >
 
-                  {{ comment.post.idPost }}
                   <button
                     class="btn-delete"
                     (click)="removeComment(comment.idComment)"

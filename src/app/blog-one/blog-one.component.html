@@ -19,7 +19,13 @@
   </div>
 </div>
 <!-- End Page Title Area -->
+<section>
+  <div class="button-container">
+    <button (click)="getPostsByUser()" class="show-button">My Posts</button>
 
+    <button (click)="clearFilter()" class="hide-button">x</button>
+  </div>
+</section>
 <!-- Start Blog Area -->
 <section class="blog-area ptb-120">
   <div class="container"></div>
@@ -38,12 +44,26 @@
 
           <div class="post-content">
             <span
-              >By: <a [routerLink]="['/single-blog', post.idPost]"></a
+              >By: {{ post.user.username
+              }}<a [routerLink]="['/single-blog', post.idPost]"></a
             ></span>
             <h3>
               <a href="#">{{ post.namePost }}</a>
             </h3>
             <p>{{ post.contentPost }}</p>
+            <div *ngIf="showButtons">
+              <button (click)="deletePost(post.idPost)" class="show-button">
+                delete
+              </button>
+
+              <button type="submit" (click)="openUpdateForm(post.idPost)">
+                Update Post
+              </button>
+              <div *ngIf="updateForm == post.idPost">
+                <app-update-post [post]="post" (updatePost)="handleUpdatePost($event)"></app-update-post>
+              </div>
+            </div>
+
             <a
               [routerLink]="['/single-blog', post.idPost]"
               class="learn-more-btn"
