@@ -52,6 +52,7 @@ import {
   SocialLoginModule,
 } from '@abacritt/angularx-social-login';
 import { UpdatePostComponent } from './update-post/update-post.component';
+import { ReactionsComponent } from './reactions/reactions.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,6 +92,7 @@ import { UpdatePostComponent } from './update-post/update-post.component';
     AdminMenuComponent,
     AdminSecurityComponent,
     UpdatePostComponent,
+    ReactionsComponent,
   ],
   imports: [
     BrowserModule,

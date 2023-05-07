@@ -51,16 +51,25 @@
               <a href="#">{{ post.namePost }}</a>
             </h3>
             <p>{{ post.contentPost }}</p>
+            <app-reactions [post]="post" [user]="this.user"> </app-reactions>
+
             <div *ngIf="showButtons">
               <button (click)="deletePost(post.idPost)" class="btn btn-primary">
                 delete
               </button>
 
-              <button class="btn btn-primary"type="submit" (click)="openUpdateForm(post.idPost)">
+              <button
+                class="btn btn-primary"
+                type="submit"
+                (click)="openUpdateForm(post.idPost)"
+              >
                 Update Post
               </button>
               <div *ngIf="updateForm == post.idPost">
-                <app-update-post [post]="post" (updatePost)="handleUpdatePost($event)"></app-update-post>
+                <app-update-post
+                  [post]="post"
+                  (updatePost)="handleUpdatePost($event)"
+                ></app-update-post>
               </div>
             </div>
 
