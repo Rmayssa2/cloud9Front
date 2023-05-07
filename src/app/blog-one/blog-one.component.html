@@ -21,9 +21,9 @@
 <!-- End Page Title Area -->
 <section>
   <div class="button-container">
-    <button (click)="getPostsByUser()" class="show-button">My Posts</button>
+    <button (click)="getPostsByUser()" class="btn btn-primary">My Posts</button>
 
-    <button (click)="clearFilter()" class="hide-button">x</button>
+    <button (click)="clearFilter()" class="btn btn-primary">x</button>
   </div>
 </section>
 <!-- Start Blog Area -->
@@ -52,11 +52,11 @@
             </h3>
             <p>{{ post.contentPost }}</p>
             <div *ngIf="showButtons">
-              <button (click)="deletePost(post.idPost)" class="show-button">
+              <button (click)="deletePost(post.idPost)" class="btn btn-primary">
                 delete
               </button>
 
-              <button type="submit" (click)="openUpdateForm(post.idPost)">
+              <button class="btn btn-primary"type="submit" (click)="openUpdateForm(post.idPost)">
                 Update Post
               </button>
               <div *ngIf="updateForm == post.idPost">
