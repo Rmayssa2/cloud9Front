@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="page-title-area">
+    <div class="container">
+      <div class="page-title-content">
+        <h2>My Patientes</h2>
+  
+        
+      </div>
+    </div>
+  </div>
+    <section class="services-area ptb-120 pt-0">
+    <div class="container">
+        <div class="section-title">
+            <span>Services</span>
+            <h2>Here you find All Patient Informations</h2>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let appointment of appointments">
+                <div class="single-services-box" style="margin-bottom: 20px;">
+                    <div class="icon">
+                        <i class="flaticon-coding"></i>
+                    </div>
+                            
+                    <h3 style="color: red; font-size: 1.2em;">Mon Patient <span style="color: grey; font-size: 0.8em; float: right;">{{ appointment.patient.username }}</span></h3>
+                    <h3>{{ appointment.type }}</h3>
+                    <h4>Le {{ appointment.dateStart | date:'dd-MM-yyyy' }} à {{ appointment.dateStart | date:'HH:mm' }} - {{ appointment.dateEnd | date:'HH:mm' }}</h4> 
+        
+                    <a routerLink="/single-service" class="learn-more-btn">Consultation File <i class="flaticon-arrow-pointing-to-right"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</section>

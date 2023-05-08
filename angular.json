@@ -27,6 +27,8 @@
               "src/back-assets/vendor/fons/boxicons"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/assets/css/app.min.css",
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/animate.min.css",
               "src/assets/css/fontawesome.min.css",
@@ -44,6 +46,8 @@
               "src/back-assets/vendor/css/theme-default.css",
               "src/back-assets/css/demo.css",
               "src/back-assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
+              "src/back-assets/vendor/libs/apex-charts/apex-charts.css",
+              "node_modules/ngx-toastr/toastr.css"
               "src/back-assets/vendor/libs/apex-charts/apex-charts.css"
             ],
             "scripts": [
@@ -133,6 +137,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

@@ -1,0 +1,37 @@
+<div mat-dialog-title>
+  <h2 class="text-primary mb-4">Make Appointment</h2>
+  <div mat-dialog-content>
+  <form [formGroup]="controlGroup">
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Patient</mat-label>
+        <mat-select formControlName="patient" required>
+          <mat-option *ngFor="let user of users" [value]="user.idUser">{{ user.username }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <!-- Doctor -->
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <select matNativeControl formControlName="type">
+          <option *ngFor="let type of type" [value]="type">{{type}}</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="half-width" appearance="fill">
+        <mat-label>Date Start</mat-label>
+        <input matInput type="datetime-local" formControlName="dateStart">
+      </mat-form-field>
+      <mat-form-field class="half-width" appearance="fill">
+        <mat-label>Date End</mat-label>
+        <input matInput type="datetime-local" formControlName="dateEnd">
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button type="button" class="btn btn-primary" (click)="onSave()" >Save</button>
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onCancel()">Cancel</button>
+</div>

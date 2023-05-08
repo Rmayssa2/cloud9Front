@@ -1,0 +1,53 @@
+<section class="coming-soon-area">
+    <div class="container-fluid p-0">
+        <div class="row m-0">
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="coming-soon-content">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="logo">
+                                <img src="assets/img/logo.png" alt="logo">
+                            </div>
+                            
+                            <h3>Change your password</h3>
+                            <p>Enter the code  that you already recived in the email </p>
+
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" [(ngModel)]="code" [ngModelOptions]="{standalone: true} " name="code" id="code" placeholder="code">
+                                    <div style="margin-top: 20px;">
+                                    <input type="password" class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone: true} " name="password" id="password" placeholder="password">
+                                </div>
+                                </div>
+
+                             
+                                <button type="submit" class="btn btn-primary" (click)="resetDone()">Change</button>
+
+                        
+                            </form>
+
+                            <div class="social">
+                                <ul>
+                                    <li><a href="#" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="#" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="reset">
+                    <img src="assets/img/Resetpassword-rafiki.png" alt="image">
+
+              
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Coming Soon Area -->

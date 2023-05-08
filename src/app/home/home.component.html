@@ -9,7 +9,7 @@
                     <h1>Science is Nothing But Perception</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-                    <a href="#" class="btn btn-primary">Make Appointment</a>
+                    <a href="#" class="btn btn-primary" [routerLink]="['/MyCalendar', 2]">My Appointments</a>
                 </div>
             </div>
 
@@ -494,67 +494,30 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
+
+            <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let u of listUsers">
                 <div class="single-team-member">
                     <div class="member-image">
-                        <img src="assets/img/team-img1.jpg" alt="image">
+                        <img src={{u.imageProfile}} alt="image">
 
-                        <a routerLink="/single-team" class="details-btn"><i class="flaticon-add"></i></a>
+                        <a [routerLink]="['/single-team', u.idUser]"class="details-btn"><i class="flaticon-add"></i></a>
                     </div>
 
                     <div class="member-content">
-                        <h3><a href="#">Agaton Ronald</a></h3>
-                        <span>Dental Assistant</span>
+                        <h3><a href="#">{{u.firstName}} {{u.lastName}}</a></h3>
+                        <span>{{u.speciality}}</span>
                     </div>
                 </div>
+              </div>
             </div>
+          
 
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-team-member">
-                    <div class="member-image">
-                        <img src="assets/img/team-img2.jpg" alt="image">
+        
 
-                        <a routerLink="/single-team" class="details-btn"><i class="flaticon-add"></i></a>
-                    </div>
+     
 
-                    <div class="member-content">
-                        <h3><a href="#">Saray Taylor</a></h3>
-                        <span>Dentist Expert</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-team-member">
-                    <div class="member-image">
-                        <img src="assets/img/team-img3.jpg" alt="image">
-
-                        <a routerLink="/single-team" class="details-btn"><i class="flaticon-add"></i></a>
-                    </div>
-
-                    <div class="member-content">
-                        <h3><a href="#">Robert Reed</a></h3>
-                        <span>Neck Expert</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-team-member">
-                    <div class="member-image">
-                        <img src="assets/img/team-img4.jpg" alt="image">
-
-                        <a routerLink="/single-team" class="details-btn"><i class="flaticon-add"></i></a>
-                    </div>
-
-                    <div class="member-content">
-                        <h3><a routerLink="/single-team" href="single-team">Joe Root</a></h3>
-                        <span>Medicine Expert</span>
-                    </div>
-                </div>
-            </div>
+            
         </div>
-    </div>
 </section>
 <!-- End Team Area -->
 

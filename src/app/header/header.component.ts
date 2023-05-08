@@ -10,11 +10,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-   roles: string[] = [];
+   roles: string = "";
+   roleeee: string = "";
+   isRoleD: boolean = false;
+   isRoleP: boolean = false;
   isLoggedIn = false;
   imageName :string ="";
   username?: string;
   constructor(private Storage: TokenStorageService,private router: Router) { }
+  isoptionsDisplayed = false; 
+  showOptions(){
+    this.isoptionsDisplayed = !this.isoptionsDisplayed
+  }
 
   ngOnInit(): void {
 
@@ -28,14 +35,25 @@ export class HeaderComponent implements OnInit {
       }
     });
     this.isLoggedIn = this.Storage.isLoggedIn();
+    console.log(this.isLoggedIn)
 
     if (this.isLoggedIn) {
       const user = this.Storage.getUser();
-      this.roles = user.roles;
+      this.roles = user.roles[0].name;
+      this.roleeee =user.roles[0];
+      console.log(this.roles);
       this.username = user.username;
       this.imageName = user.imageProfile;
+      console.log("icii")
 
 
+
+  }
+
+  if (this.roles == "ROLE_DOCTOR" || this.roleeee == "ROLE_DOCTOR") {
+    this.isRoleD = true;
+  } else if (this.roles == "ROLE_PATIENT" || this.roleeee == "ROLE_PATIENT") {
+    this.isRoleP = true;
   }
 
 }

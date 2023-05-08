@@ -4,6 +4,7 @@ import { Post, UpdatePost } from '../models/post.model';
 import { TokenStorageService } from '../service/token-storage.service';
 import { FormGroup } from '@angular/forms';
 import { post } from 'jquery';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-blog-one',
@@ -22,7 +23,8 @@ export class BlogOneComponent implements OnInit {
 
   constructor(
     private postService: PostService,
-    private storageService: TokenStorageService
+    private storageService: TokenStorageService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +33,11 @@ export class BlogOneComponent implements OnInit {
     this.postService.getPosts().subscribe((posts) => {
       this.posts = posts;
     });
+  }
+  handleCreated($event: Post) {
+    this.posts.push($event);
+    this.showForm = false;
+    this.toastr.success('Post created succesfully.');
   }
   clearFilter(): void {
     this.showButtons = false;
@@ -56,12 +63,14 @@ export class BlogOneComponent implements OnInit {
   deletePost(postId: number): void {
     this.postService.removePost(postId).subscribe(() => {
       this.posts = this.posts.filter((post) => post.idPost != postId);
+      this.toastr.success('Post deleted succefully.');
     });
   }
   handleUpdatePost($event: any) {
     this.updateForm = 0;
     this.postService.getPostsByUser(this.user.id).subscribe((posts) => {
       this.posts = posts;
+      this.toastr.success('Post updated succefully.');
     });
   }
 }

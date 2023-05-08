@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="page-title-area">
+  <div class="container">
+    <div class="page-title-content">
+      <h2>calendar</h2>
+
+      <ul>
+        <li><a>Medecin</a></li>
+        <li>Rafed Ben Jedou</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section class="cart-area ptb-120">
+  <div class="container">
+    <full-calendar [options]="calendarOptions" (eventClick)="handleEventClick($event)" (eventDrop)="handleEventDrop($event)"></full-calendar>
+</div>
+</section>
+
+<app-footer></app-footer>

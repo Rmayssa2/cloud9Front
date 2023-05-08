@@ -1,0 +1,14 @@
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .button-container > * {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .learn-more-btn {
+    margin-left: auto;
+  }

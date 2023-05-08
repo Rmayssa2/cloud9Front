@@ -1,4 +1,10 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  NgModule,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { PostService } from '../services/post.service';
 import { CreatePost, Post } from '../models/post.model';
@@ -6,6 +12,7 @@ import { Validators } from '@angular/forms';
 import { TokenStorageService } from '../service/token-storage.service';
 import { User } from '../models/user.model';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-post-form',
@@ -13,13 +20,15 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./post-form.component.css'],
 })
 export class PostFormComponent implements OnInit {
+  @Output() postCreated = new EventEmitter<Post>();
   postForm!: FormGroup;
   message: string = '';
   user!: any;
   constructor(
     private formBuilder: FormBuilder,
     private postService: PostService,
-    private storageService: TokenStorageService
+    private storageService: TokenStorageService,
+    
   ) {}
 
   ngOnInit() {
@@ -39,9 +48,9 @@ export class PostFormComponent implements OnInit {
         contentPost: this.postForm.value.postContent,
         imageUrl: this.postForm.value.imageUrl,
       };
-      this.postService.createPost(post, this.user.id!).subscribe((posts) => {
+      this.postService.createPost(post, this.user.id!).subscribe((post) => {
         this.message = 'Post créé avec succés';
-        window.location.reload();
+        this.postCreated.emit(post);
       });
     }
 

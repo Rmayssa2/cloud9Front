@@ -1,0 +1,62 @@
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-field {
+    width: 100%;
+  }
+  
+  .card-input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-icon {
+    margin-right: 8px;
+  }
+  
+  .card-logo-container {
+    margin-left: 16px;
+  }
+  
+  .card-logo {
+    height: 24px;
+  }
+  
+  .exp-cvv-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .exp-field {
+    width: 60%;
+  }
+  
+  .cvv-field {
+    width: 35%;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Animations */
+  .mat-form-field-flex {
+    transition: all 0.3s ease-out;
+  }
+  
+  .mat-form-field-underline {
+    transition: all 0.3s ease-out;
+  }
+  
+  

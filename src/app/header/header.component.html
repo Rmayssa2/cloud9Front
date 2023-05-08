@@ -20,6 +20,11 @@
             <li class="nav-item">
               <a routerLink="/home" class="nav-link active">Home</a>
             </li>
+            <li class="nav-item">
+              <a routerLink="/Appointments" class="nav-link active"
+                >Appointment</a
+              >
+            </li>
 
             <li class="nav-item">
               <a href="#" class="nav-link"
@@ -131,7 +136,7 @@
               ></a>
               <ul class="dropdown-menu">
                 <li class="nav-item">
-                  <a routerLink="/blogOne" class="nav-link">See blogs</a>
+                  <a routerLink="/blogOne" class="nav-link">Blog Grid</a>
                 </li>
 
                 <li class="nav-item">
@@ -152,14 +157,6 @@
           </ul>
 
           <div class="others-options">
-            <div class="languages-list">
-              <select>
-                <option value="1">En</option>
-                <option value="2">Ge</option>
-                <option value="3">Spa</option>
-              </select>
-            </div>
-
             <a routerLink="/cart" class="cart-btn"
               ><i class="flaticon-shopping-bag"></i>
               <span>04</span>
@@ -168,15 +165,76 @@
             <a routerLink="/login" class="btn btn-secondary" *ngIf="!isLoggedIn"
               >LOGIN !</a
             >
-            <div class="dropdown" *ngIf="isLoggedIn">
-              <img src="{{ imageName }}" class="userImg" /><i
-                class="fas fa-chevron-down"
-              ></i>
-              <div class="dropdown-content">
-                <a routerLink="/edit">Settings</a>
-                <a (click)="logout()" routerLink="/login">Logout</a>
+            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+              <div
+                (click)="showOptions()"
+                class="nav-link dropdown-toggle hide-arrow"
+                data-bs-toggle="dropdown"
+              >
+                <div class="avatar avatar-online">
+                  <img src="{{ imageName }}" alt="" class="userImg" />
+                </div>
               </div>
-            </div>
+              <ul
+                *ngIf="isoptionsDisplayed"
+                class="dropdown-menu dropdown-menu-end show"
+              >
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="pages-account-settings-account.html"
+                  >
+                    <div class="d-flex">
+                      <div class="flex-shrink-0 me-3">
+                        <div class="avatar avatar-online">
+                          <img src="{{ imageName }}" alt="" class="userImg" />
+                        </div>
+                      </div>
+                      <div class="flex-grow-1">
+                        <span class="fw-semibold d-block">{{ username }}</span>
+                        <small class="text-muted" *ngIf="roles">{{
+                          roles
+                        }}</small>
+                        <small class="text-muted" *ngIf="roleeee">{{
+                          roleeee
+                        }}</small>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li *ngIf="isRoleD">
+                  <a class="dropdown-item" routerLink="/myprofile">
+                    <i class="bx bx-user me-2"></i>
+                    <span class="align-middle">My Profile</span>
+                  </a>
+                </li>
+                <li *ngIf="isRoleP">
+                  <a class="dropdown-item" routerLink="/profile">
+                    <i class="bx bx-user me-2"></i>
+                    <span class="align-middle">My Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="/edit">
+                    <i class="bx bx-cog me-2"></i>
+                    <span class="align-middle">Settings</span>
+                  </a>
+                </li>
+
+                <li>
+                  <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="logout()">
+                    <i class="bx bx-power-off me-2"></i>
+                    <span class="align-middle">Log Out</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
           </div>
         </div>
       </nav>

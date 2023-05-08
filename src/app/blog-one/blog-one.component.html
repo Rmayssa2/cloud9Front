@@ -7,7 +7,7 @@
           Create a post
         </button>
         <div *ngIf="showForm" class="mt-4">
-          <app-post-form></app-post-form>
+          <app-post-form (postCreated)="handleCreated($event)"></app-post-form>
         </div>
       </h5>
 
@@ -50,7 +50,17 @@
             <h3>
               <a href="#">{{ post.namePost }}</a>
             </h3>
-            <p>{{ post.contentPost }}</p>
+            <div *ngIf="post.contentPost.length > 255; else shortPost">
+              <p style="overflow-x: hidden; height: 150px">
+                {{ post.contentPost | slice : 0 : 310 }}...
+              </p>
+            </div>
+            <ng-template #shortPost>
+              <p style="overflow-x: hidden; height: 150px">
+                {{ post.contentPost }}
+              </p>
+            </ng-template>
+
             <app-reactions [post]="post" [user]="this.user"> </app-reactions>
 
             <div *ngIf="showButtons">

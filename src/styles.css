@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/interaction/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+@import "~ngx-bootstrap/modal/modal-bs4.min.css";
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import '~owl.carousel/dist/assets/owl.carousel.min.css';
+@import '~owl.carousel/dist/assets/owl.theme.default.min.css';
+
+@import '~ng-pick-datetime/assets/style/picker.min.css';

@@ -1,0 +1,148 @@
+<app-header></app-header>
+
+
+
+        <!-- Start Page Title Area -->
+        <div class="page-title-area">
+            <div class="container">
+                <div class="page-title-content">
+                    <h2>My Profile</h2>
+
+                    <ul>
+                        <li><a href="index.html">Profile</a></li>
+                        <li>{{user.username}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Title Area -->
+
+        <!-- Start Team Details Area -->
+        <section class="team-details-area ptb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="team-details-sidebar">
+                            <div class="team-profile">
+                                <img src={{user.imageProfile}} alt="image">
+
+                                <div class="team-content">
+                                    <h3>{{user.firstName}}</h3>
+                                    <span>{{user.lastName}}</span>
+                                </div>
+                            </div>
+
+                            <div class="social-box">
+                                <h3>Social</h3>
+                                <ul>
+                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="call-to-action-box">
+                                <a href="#">
+                                    <i class="fas fa-headset"></i>
+
+                                    <h3>Emergency Cases</h3>
+
+                                    <span>+21621002849</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-12">
+                        <div class="team-details-desc">
+                            <h3>About Me</h3>
+                            <p>Efficiently myocardinate market-driven innovation via open-source alignments. Dramatically engage  high-Phosfluorescently expedite impactful supply chains via focused results. Holistically . Compellingly supply just in time catalysts for change through.</p>
+
+                            <ul class="team-info">
+                                <li>
+                                    <span>Speciality</span>
+
+                                    <ul>
+                                        <li>{{user.speciality}}</li>
+                                        
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <span>Education</span>
+
+                                    <ul>
+                                        <li>{{user.education}}</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <span>WorKing hours</span>
+
+                                    <ul>
+                                        <li>{{user.hourForWorkingStart}}AM</li>
+                                        <li>To</li>
+
+                                        <li>{{user.hourForWorkingEnd}}PM</li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <span>Diplomat</span>
+
+                                    <ul>
+                                        <img src={{user.certificate}} />
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <span>Address</span>
+
+                                    <ul>
+                                        <li>{{user.city}}</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <span>Phone</span>
+
+                                    <ul>
+                                        <li>+216{{user.phonenumber}}</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <span>Email</span>
+
+                                    <ul>
+                                        <li>{{user.email}}</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <span>Age</span>
+
+                                    <ul>
+                                        <li>{{user.age}}</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Zip code</span>
+
+                                    <ul>
+                                        <li>{{user.postCode}}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Team Details Area -->
+        <app-footer></app-footer>

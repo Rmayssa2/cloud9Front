@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Post } from '../models/post.model';
 import { PostService } from '../services/post.service';
 import { TokenStorageService } from '../service/token-storage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-single-blog',
@@ -21,11 +22,12 @@ export class SingleBlogComponent implements OnInit {
 
   updateComment: number = 0;
   updatedcomment!: Comment;
-  
+
   constructor(
     private commentService: CommentService,
     private postService: PostService,
     private storageService: TokenStorageService,
+    private toastr: ToastrService,
 
     private route: ActivatedRoute
   ) {}
@@ -55,6 +57,7 @@ export class SingleBlogComponent implements OnInit {
       .getCommentsByPost(comment.post.idPost)
       .subscribe((comments) => {
         this.comments = comments;
+        this.toastr.success('Comment updated succefully.');
       });
   }
   editComment(comment: Comment): void {
