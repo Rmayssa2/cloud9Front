@@ -52,7 +52,7 @@ export class AppointmentComponent implements OnInit{
         this.calendarOptions.events = this.appointments.map(appointment => ({
           id: appointment.idAppointment.toString(),
           type: appointment.type,
-      //    title: appointment.patient.username+ '   ==> ' +'    ' +'   ' + appointment.type,
+       title: appointment.patient.username+ '   ==> ' +'    ' +'   ' + appointment.type,
 
           start: appointment.dateStart,
           end: appointment.dateEnd,

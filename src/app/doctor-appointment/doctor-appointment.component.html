@@ -27,7 +27,7 @@
                     <h3>{{ appointment.type }}</h3>
                     <h4>Le {{ appointment.dateStart | date:'dd-MM-yyyy' }} à {{ appointment.dateStart | date:'HH:mm' }} - {{ appointment.dateEnd | date:'HH:mm' }}</h4> 
         
-                    <a routerLink="/single-service" class="learn-more-btn">Consultation File <i class="flaticon-arrow-pointing-to-right"></i></a>
+                    <a  (click)="goToConsultationFileAsDoctor(appointment.idAppointment,appointment.patient.idUser)" class="learn-more-btn">Consultation File <i class="flaticon-arrow-pointing-to-right"></i></a>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { Type } from './../appointment/type';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, Inject } from '@angular/core';
-import { User } from '../home/user';
+import { User } from '../models/user.model';
 import { Appointment } from '../appointment/appointment';
 import { UserService } from '../home/user.service';
 import { ActivatedRoute } from '@angular/router';
@@ -46,8 +46,8 @@ export class AppointmentFormDashComponent {
   ngOnInit() {
     this.userService.getusers().subscribe(users => {
       this.users = users;
-      this.patient = users.filter(user => user.role === 'patient');
-      this.doctor = users.filter(user => user.role === 'docteur');
+      this.patient = users.filter(user => user.role[0].name === 'ROLE_PATIENT');
+      this.doctor = users.filter(user => user.role[0].name === 'ROLE_DOCTOR');
 
     });
   }
@@ -59,8 +59,8 @@ export class AppointmentFormDashComponent {
   
       const appointment: Appointment = {
         idAppointment: this.controlGroup.get('idAppointment')?.value,
-        patient: selectedPatient || { idUser: 0, username: '', email: '', password: '', role: '' },
-        doctor: selectedDoctor || { idUser: 0, username: '', email: '', password: '', role: '' },
+        patient: selectedPatient ,
+        doctor: selectedDoctor,
         type: this.controlGroup.get('type')?.value,
         dateStart: this.controlGroup.get('dateStart')?.value,
         dateEnd: this.controlGroup.get('dateEnd')?.value

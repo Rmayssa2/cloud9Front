@@ -6,8 +6,10 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dial
 import { AppointmentService } from '../appointment/appointment.service';
 import { Appointment } from '../appointment/appointment';
 import { Type } from '../appointment/type';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ChargeComponent } from '../charge/charge.component';
+import { TokenStorageService } from '../service/token-storage.service';
+import { filter } from 'rxjs';
 
 
 @Component({
@@ -19,7 +21,8 @@ export class AppointmentFormComponent implements OnInit {
   users: User[] = [];
   appointment!: Appointment;
   userId!: number;
-
+  user:any;
+  roles: string;
   public controlGroup: FormGroup;
   public type: Type[] = [  Type.PRESENCIEL,  Type.ENLIGNE];
 
@@ -29,35 +32,58 @@ export class AppointmentFormComponent implements OnInit {
     private route: ActivatedRoute,
     private appointmentService: AppointmentService,
     private dialog: MatDialog,
-
+    private storageService : TokenStorageService,
+    private actRoute: ActivatedRoute,
     private dialogRef: MatDialogRef<AppointmentFormComponent>,
+    private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: { appointment: Appointment | null}
   ) {
     this.controlGroup = this.fb.group({
-      patient: ['', Validators.required],
       type: ['', Validators.required],
       dateStart: ['', Validators.required],
       dateEnd: ['', Validators.required],
     });
   }
   ngOnInit() {
-    this.userService.getusers().subscribe(users => {
-      this.users = users;
-    });
-  
-    const userId = this.route.snapshot.params['id'];
-    console.log(userId );
+
+ 
+
+    this.user = this.storageService.getUser();
+    console.log(this.user);
+    this.roles = this.storageService.getUser().roles;
   }
   
   onSave(): void {
+
     if (this.controlGroup.valid) {
-      const selectedPatient = this.users.find(user => user.idUser === this.controlGroup.get('patient')?.value);
+
+
   
       const appointment: Appointment = {
         idAppointment: this.controlGroup.get('idAppointment')?.value,
-        patient: selectedPatient || { idUser: 0, username: '', email: '', password: '', role: '' },
-        doctor: { idUser: 1, username: '', email: '', password: '', role: '' },
+        patient: { idUser: this.user.id ,username:'' ,email:'' ,password:'' ,imageProfile:'' ,phonenumber:''
+        ,isverified:1, speciality:'' ,gender:'' ,height:'' ,weight:'' ,bloodType:'' ,age:'' ,education:'' ,certificate:'' 
+        ,firstName:''
+        ,lastName:''
+        ,hourForWorkingStart :''
+        ,hourForWorkingEnd :''
+        ,city :''
+        ,postCode:'',
+     
+        },  
+
+         doctor: { idUser: 5 ,username:'' ,email:'' ,password:'' ,imageProfile:'' ,phonenumber:''
+        ,isverified:1, speciality:'' ,gender:'' ,height:'' ,weight:'' ,bloodType:'' ,age:'' ,education:'' ,certificate:'' 
+        ,firstName:''
+        ,lastName:''
+        ,hourForWorkingStart :''
+        ,hourForWorkingEnd :''
+        ,city :''
+        ,postCode:'',
+        
+},
         type: this.controlGroup.get('type')?.value,
+
         dateStart: this.controlGroup.get('dateStart')?.value,
         dateEnd: this.controlGroup.get('dateEnd')?.value
       };
@@ -68,14 +94,16 @@ export class AppointmentFormComponent implements OnInit {
           data: { amount: 2000 }
         });
         dialogRef.afterClosed().subscribe(result => {
+          console.log(result);
           if (result === true) {
             console.log('Payment successful');
             this.dialogRef.close(true);
           } else {
+            this.dialogRef.close(true);
             console.log('Payment failed');
-            this.dialogRef.close(false);
           }
         });
+      
       });
     }
   }

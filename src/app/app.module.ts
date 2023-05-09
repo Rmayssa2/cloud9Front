@@ -77,9 +77,8 @@ import { DoctorAppointmentComponent } from './doctor-appointment/doctor-appointm
 import { AppointmentFormDashComponent } from './appointment-form-dash/appointment-form-dash.component';
 import { AppointmentEditDashComponent } from './appointment-edit-dash/appointment-edit-dash.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
-import { ToastrModule,ToastNoAnimationModule} from 'ngx-toastr';
+import { ToastNoAnimationModule} from 'ngx-toastr';
 import { AngularFireModule } from '@angular/fire/compat'
 import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { ResetPwdSmsComponent } from './reset-pwd-sms/reset-pwd-sms.component';
@@ -101,6 +100,11 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 
+
+import { ChatComponent } from './chat/chat.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -163,6 +167,9 @@ import { ReclamationComponent } from './reclamation/reclamation.component';
     ConferenceComponentComponent,
     EditConsultationFileComponent,
     MyprofileComponent,
+    ChatComponent,
+    
+    
   ],
   imports: [
     CommonModule,

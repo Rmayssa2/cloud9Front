@@ -1,4 +1,4 @@
-import { User } from "../home/user";
+import { User } from "../models/user.model";
 import { Type } from "./type";
 
 export class  Appointment{
@@ -6,7 +6,7 @@ export class  Appointment{
   type!: Type;
   dateStart!: Date;
   dateEnd!: Date;
-  patient!: User;
-  doctor!: User;
+  patient!: any;
+  doctor!: any;
 
 }

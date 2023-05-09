@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AppointmentService } from '../appointment/appointment.service';
 import { Appointment } from '../appointment/appointment';
-import { User } from '../home/user';
+import { User } from '../models/user.model';
 import { Type } from '../appointment/type';
 import { UserService } from '../home/user.service';
 
@@ -54,8 +54,9 @@ export class AppointmentEditDashComponent {
   });
   this.userService.getusers().subscribe(users => {
     this.users = users;
-    this.patient = users.filter(user => user.role === 'patient');
-    this.doctor = users.filter(user => user.role === 'docteur');
+    this.patient = users.filter(user => user.role[0].name === 'ROLE_PATIENT');
+    this.doctor = users.filter(user => user.role[0].name === 'ROLE_DOCTOR');
+
 
   });
 }
@@ -66,8 +67,8 @@ export class AppointmentEditDashComponent {
   
       const appointment: Appointment = {
         idAppointment: this.data.id,
-        patient: selectedPatient || { idUser: 0, username: '', email: '', password: '', role: '' },
-        doctor: selectedDoctor || { idUser: 0, username: '', email: '', password: '', role: '' },
+        patient: selectedPatient ,
+        doctor: selectedDoctor,
        type: this.controlGroup.get('type')?.value,
         dateStart: this.controlGroup.get('dateStart')?.value,
         dateEnd: this.controlGroup.get('dateEnd')?.value,

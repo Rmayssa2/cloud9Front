@@ -1,0 +1,193 @@
+
+:host ::ng-deep .content-right {
+  width: calc(100% - 300px) !important;
+}
+:host ::ng-deep .content-right1 {
+  width: calc(100% - 300px) !important;
+}
+:host ::ng-deep .mx-75 {
+  margin-left: 0.75rem !important;
+  margin-right: 0.75rem !important;
+}
+:host ::ng-deep .py-75 {
+  padding-bottom: 0.75rem !important;
+  padding-top: 0.75rem !important;
+}
+:host ::ng-deep .px-1 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+:host ::ng-deep .mr-50,
+.mx-50 {
+  margin-right: 0.5rem !important;
+  margin-left: 0.5rem !important;
+}
+:host ::ng-deep .mb-50,
+.my-50 {
+  margin-bottom: 0.5rem !important;
+}
+:host ::ng-deep .dropdown-menu {
+  transform: translate3d(-131px, 18px, 0px) !important;
+}
+:host ::ng-deep .chat-sidebar .chat-sidebar-list-wrapper {
+  overflow-y: scroll;
+}
+:host ::ng-deep .sidebar-fixed {
+  overflow: hidden !important;
+  width: 300px;
+}
+
+:host ::ng-deep .app-content {
+  overflow-y: hidden !important;
+}
+:host ::ng-deep .pb-25,
+.py-25 {
+  padding-bottom: 0.25rem !important;
+}
+:host ::ng-deep .ml-25,
+.mx-25 {
+  margin-left: 0.25rem !important;
+}
+
+:host ::ng-deep .ps--active-y > .ps__rail-y {
+  display: none;
+}
+@media (max-width: 767px) {
+  :host ::ng-deep .content-right {
+    width: calc(100% - 0px) !important;
+  }
+}
+@media (max-width: 767px) {
+  :host ::ng-deep .content-right1 {
+  }
+}
+:host ::ng-deep .d-inline-block {
+  display: inline !important;
+}
+div.col-md-2 {
+  overflow-y: auto;
+  max-height: 400px; /* set the maximum height of the container */
+}
+
+div.card-content {
+  overflow-y: auto;
+  max-height: 300px; /* set the maximum height of the container */
+}
+.card-content {
+  height: 100%;
+  overflow-y: auto;
+  
+}
+
+.chat-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+}
+
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 55px;
+  
+}
+
+.chat-content {
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 55px;
+}
+
+.card-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+.chat-contain {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  background-color: #f2f2f2; /*hetha dakhleni*/
+  
+}
+
+.chat-message {
+  flex: 1;
+  padding: 7px;
+  margin: 7px;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+.chat-message.right {
+  background-color: rgb(255, 81, 0);;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-message.left {
+  background-color: white;
+  align-self: flex-start;
+}
+
+.chat-time {
+  flex: 1;
+  border-radius: 10px;
+  max-width: 60%;
+}
+
+.chat-time.right {
+  color: #6a6a6a;
+  align-self: flex-end;
+  font-size: 10px;
+  padding-right: 5px;
+}
+
+.chat-time.left {
+  align-self: flex-start;
+  color: #6a6a6a;
+  font-size: 10px;
+  padding-left: 7px;
+}
+
+.list-group-item:hover {
+  background-color: rgb(238, 238, 238);
+}
+
+.user-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(255, 81, 0);
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.file-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.file-icon i {
+  font-size: 24px;
+}
+
+
+

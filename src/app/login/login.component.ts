@@ -12,7 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   isLoggedIn = false;
@@ -34,11 +34,13 @@ export class LoginComponent implements OnInit {
 
 
   showSignUp() {
-    document.getElementById('container')!.classList.add("right-panel-active");
+    document.getElementById('container')!.classList.add('right-panel-active');
   }
 
   showSignIn() {
-    document.getElementById('container')!.classList.remove("right-panel-active");
+    document
+      .getElementById('container')!
+      .classList.remove('right-panel-active');
   }
 
   ngOnInit(): void {
@@ -59,10 +61,10 @@ export class LoginComponent implements OnInit {
 
   }
 
-  loginUser(){
+  loginUser() {
     console.log(this.username);
     console.log(this.password);
-    
+
     let bodyData = {
       username: this.username1,
       password: this.password1,
@@ -123,14 +125,10 @@ export class LoginComponent implements OnInit {
   }
  
   }
-  
+
   reloadPage(): void {
     window.location.reload();
   }
-
-
-
-
 
   save() {
 
@@ -180,6 +178,7 @@ else {
 }
   changeRole(e : any) {
 this.roles=[e.target.value];
+console.log(this.roles);
   }
 
 
