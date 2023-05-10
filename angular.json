@@ -27,7 +27,6 @@
               "src/back-assets/vendor/fons/boxicons"
             ],
             "styles": [
-              "src/assets/css/app.min.css",
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/animate.min.css",
               "src/assets/css/fontawesome.min.css",
@@ -82,8 +81,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "500mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",

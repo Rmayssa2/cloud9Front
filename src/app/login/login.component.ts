@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { TokenStorageService } from '../service/token-storage.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { SocialAuthService, FacebookLoginProvider } from '@abacritt/angularx-social-login';
+import { environment } from 'src/environments/environment.prod';
+
 
 
 @Component({
@@ -64,7 +66,7 @@ export class LoginComponent implements OnInit {
       password: this.password1,
     };
 
-    this.http.post("http://localhost:8075/api/auth/signin", bodyData).subscribe((resultData: any)=>{
+    this.http.post(`${environment.apiUrl}/api/auth/signin`, bodyData).subscribe((resultData: any)=>{
       this.storageService.saveToken(resultData.accessToken);
       this.storageService.saveUser(resultData);
       this.isLoginFailed = false;
@@ -111,7 +113,7 @@ export class LoginComponent implements OnInit {
     }
 
 
-    this.http.post("http://localhost:8075/api/auth/signup", bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
+    this.http.post(`${environment.apiUrl}/api/auth/signup`, bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
     {
       console.log(resultData);
      alert("done!");

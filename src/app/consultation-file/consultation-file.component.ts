@@ -10,6 +10,8 @@ import { SafeUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { TokenStorageService } from '../service/token-storage.service';
+import { environment } from 'src/environments/environment.prod';
+
 
 
 
@@ -98,7 +100,7 @@ export class ConsultationFileComponent implements OnInit {
     }
   }
   addImageToTest(id?:string){
-    const url = `http://localhost:8075/api/consultation-files/test/${id}/image`;
+    const url = `${environment.apiUrl}/api/consultation-files/test/${id}/image`;
     console.log(url);
     const formData = new FormData();
     console.log(formData)

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenStorageService } from '../service/token-storage.service';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-forget-password',
@@ -31,7 +32,7 @@ export class ForgetPasswordComponent {
     };
   
      if(this.email != ""){
-      this.http.post("  http://localhost:8075/api/auth/ResetPasswordMail ", bodyData).subscribe((resultData: any)=>{
+      this.http.post(`${environment.apiUrl}/api/auth/ResetPasswordMail`, bodyData).subscribe((resultData: any)=>{
         console.log(resultData);
         this.toastr.success('Check ur email', 'You recived the code',{timeOut: 3000});
         this.router.navigate(['ResetPwd',this.email ]);
@@ -40,7 +41,7 @@ export class ForgetPasswordComponent {
       });
     }
       else if(this.phone !="") {
-        this.http.post(" http://localhost:8075/api/auth/restPwdSms", data).subscribe((resultData: any)=>{
+        this.http.post(" ${environment.apiUrl}/api/auth/restPwdSms", data).subscribe((resultData: any)=>{
           console.log(resultData);
           this.toastr.success('Check ur phone', 'You recived the code',{timeOut: 3000});   
           this.router.navigate(['restSms',this.phone ]);

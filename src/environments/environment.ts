@@ -3,7 +3,7 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 export const environment = {
-    production: false,
+    production: true,
   firebase: {
     projectId: 'tobeeb-aa37d',
     appId: '1:434279337998:web:3ea34e043949f0ff2a6c5f',

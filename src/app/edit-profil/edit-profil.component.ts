@@ -6,6 +6,8 @@ import { User } from '../models/user.model';
 import { ToastrService } from 'ngx-toastr';
 import { ConsultationFile } from '../models/consultationFile.model';
 import { ConsultationFileService } from '../service/consultationFile.service';
+import { environment } from 'src/environments/environment.prod';
+
 
 @Component({
   selector: 'app-edit-profil',
@@ -58,7 +60,7 @@ export class EditProfilComponent {
     
 
     console.log(user);
-    this.httpClient.put(`http://127.0.0.1:8075/api/auth/update/${this.idUser}`, user ).subscribe((resultData: any)=>{
+    this.httpClient.put(`${environment.apiUrl}/api/auth/update/${this.idUser}`, user ).subscribe((resultData: any)=>{
       this.storageService.saveUser(resultData);
       if(resultData){
         window.location.reload();
@@ -103,7 +105,7 @@ export class EditProfilComponent {
       "oldpassword": this.oldpassword
     }
     if(this.confirmpasswoed == this.newpassword){ 
-      this.httpClient.put(` http://localhost:8075/api/auth/changepassword/${this.idUser}`, body ).subscribe((resultData: any)=>{
+      this.httpClient.put(` ${environment.apiUrl}/api/auth/changepassword/${this.idUser}`, body ).subscribe((resultData: any)=>{
         console.log(resultData.statusCode);
           if(resultData.statusCode == 200){
             this.toastr.success('Password changed successfully', 'Well done',{timeOut: 3000});

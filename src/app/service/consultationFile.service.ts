@@ -7,13 +7,15 @@ import { get } from 'jquery';
 import { Prescription } from '../models/prescription.model';
 import { Test } from '../models/test.model';
 import { TokenStorageService } from './token-storage.service';
+import { environment } from 'src/environments/environment.prod';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConsultationFileService {
 
-    private baseUrl = 'http://localhost:8075/api/consultation-files'; 
+    private baseUrl = `${environment.apiUrl}/api/consultation-files`; 
   
     constructor(private http: HttpClient, private tokenService:TokenStorageService) { }
   

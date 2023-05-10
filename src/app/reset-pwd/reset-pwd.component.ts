@@ -24,7 +24,7 @@ export class ResetPwdComponent {
       password:this.password
     };
 
-    this.http.post("http://localhost:8075/api/auth/resetPassword", bodyData).subscribe((resultData: any)=>{
+    this.http.post("${environment.apiUrl}/api/auth/resetPassword", bodyData).subscribe((resultData: any)=>{
       console.log(resultData);
 
       alert("done");
